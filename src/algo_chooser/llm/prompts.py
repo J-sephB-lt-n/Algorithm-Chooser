@@ -8,6 +8,7 @@ SYSTEM_PROMPTS: Final[dict[str, str]] = {
     "assess_algorithm_to_solve_business_problem": "You are a domain expert."
 }
 
+# NOTE: A large proportion of the model prompt appears in the output schema itself
 assess_algorithm_to_solve_business_problem_prompt = """
 <summary-of-{{ alg_name }}>
 {{ alg_summary }}
@@ -16,8 +17,6 @@ assess_algorithm_to_solve_business_problem_prompt = """
 <business-problem>
 {{ business_problem_desc }}
 </business-problem>
-
-Your task is to assess how effective it would be to apply {{ alg_name }} to solving this business problem.
 
 Your response must include a single valid JSON markdown code block whose contents \
 adheres to the following constraints:
