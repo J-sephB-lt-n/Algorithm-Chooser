@@ -21,6 +21,7 @@ class LLMClient:
             model=model,
             temperature=temperature,
         )
+        self._last_api_response = None
 
     def chat(self, messages, **kwargs) -> str:
         """TODO"""
@@ -29,4 +30,5 @@ class LLMClient:
             **vars(self.model_config),
             **kwargs,
         )
-        return completion.choices[0].messages.content
+        self._last_api_response = completion
+        return completion.choices[0].message.content
