@@ -17,7 +17,7 @@ from src.algo_chooser.llm.tasks.assess_alg_to_solve_business_problem import (
 
 st.title("Algorithm Evaluator")
 
-llm_base_url: str = st.text_input("Base URL", value="http://localhost:11434")
+llm_base_url: str = st.text_input("Base URL", value="http://localhost:11434/v1")
 llm_api_key: str = st.text_input("API Key", type="password")
 llm_model: str = st.text_input("Specify your model name")
 business_problem: str = st.text_area("Describe your business problem")
